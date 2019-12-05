@@ -1,4 +1,5 @@
-package Model.data;
+package Model;
 
 public class Model {
+
 }

@@ -1,6 +1,6 @@
 package Model.data;
 
-abstract class Ingredient {
+public abstract class Ingredient {
     private final String name;
     private float weight;
 

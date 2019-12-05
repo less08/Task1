@@ -1,15 +1,15 @@
 package Model.data;
 
 public class Vegetable extends Ingredient {
-    private final float calloriesPerHundred;
+    private final float caloriesPerHundred;
 
-    public Vegetable(String name, float calloriesPerHundred, float weight) {
+    public Vegetable(String name, float caloriesPerHundred, float weight) {
         super(name, weight);
-        this.calloriesPerHundred = calloriesPerHundred;
+        this.caloriesPerHundred = caloriesPerHundred;
     }
 
     @Override
     public float calculateCalories() {
-        return calloriesPerHundred * getWeight() / 100;
+        return caloriesPerHundred * getWeight() / 100;
     }
 }
