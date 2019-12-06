@@ -47,14 +47,23 @@ public class Salad {
         ingredientList.sort(new Comparator<Ingredient>() {
             @Override
             public int compare(Ingredient o1, Ingredient o2) {
-                if (o1.calculateCalories()>o2.calculateCalories())
+                if (o1.getCalories()>o2.getCalories())
                     return 1;
-                else if (o1.calculateCalories()<o2.calculateCalories())
+                else if (o1.getCalories()<o2.getCalories())
                     return -1;
 
                 return 0;
             }
         });
+    }
+
+    public ArrayList<Ingredient> findIngridientInRangeOfCalories(float from, float to){
+        ArrayList<Ingredient> ingredientRangeList = new ArrayList<>();
+        for (Ingredient ingredient:ingredientList) {
+            if (ingredient.getCalories()>=from&&ingredient.getCalories()<=to)
+                ingredientRangeList.add(ingredient);
+        }
+        return ingredientRangeList;
     }
 
 

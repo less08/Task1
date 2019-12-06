@@ -10,6 +10,7 @@ public abstract class Ingredient {
     }
 
     public abstract float calculateCalories();
+    public abstract float getCalories();
 
     public float getWeight() {
         return weight;
