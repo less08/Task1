@@ -23,5 +23,23 @@ public class Model {
 
 
 
+    public float countSaladCalories(){
+         return salad.countCalories();
+    }
 
+    public ArrayList<Ingredient> getIngredientList(){
+        return salad.getIngredientList();
+    }
+
+    public void sortByName(){
+        salad.sortByName();
+    }
+
+    public void sortByCalories(){
+        salad.sortByCalories();
+    }
+
+    public void sortByWeight(){
+        salad.sortByWeight();
+    }
 }
