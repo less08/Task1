@@ -1,9 +1,12 @@
 package Controller;
 
 import Model.Model;
+import Model.data.Ingredient;
 import Model.data.SpiceEnum;
 import Model.data.VegetableEnum;
 import View.View;
+
+import java.util.ArrayList;
 
 public class Controller {
     private Model model;
@@ -32,9 +35,8 @@ public class Controller {
         view.showMessage(View.DELIMETER);
     }
 
-    public void showIngredients() {
-        model.getIngredientList()
-                .forEach(ingredient ->
+    public void showIngredients(ArrayList<Ingredient> list) {
+       list.forEach(ingredient ->
                         view.showMessage(ingredient.getName() + " "
                                 + ingredient.getCalories() + " "
                                 + ingredient.getWeight()));
@@ -43,18 +45,18 @@ public class Controller {
 
     public void processUser() {
         createSalad();
-        showIngredients();
+        showIngredients(model.getIngredientList());
         countCalories();
         model.sortByName();
         view.showMessage(View.SORTED_BY_NAME);
-        showIngredients();
+        showIngredients(model.getIngredientList());
         model.sortByCalories();
         view.showMessage(View.SORTED_BY_CALORIES);
-        showIngredients();
+        showIngredients(model.getIngredientList());
         model.sortByWeight();
         view.showMessage(View.SORTED_BY_WEIGHT);
-        showIngredients();
-        //model.getIngredientsInRangeOfCalories(12,25);
+        showIngredients(model.getIngredientList());
+        showIngredients(model.getIngredientsInRangeOfCalories(12,25));
 
 
     }

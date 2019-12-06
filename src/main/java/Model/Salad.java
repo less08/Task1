@@ -5,14 +5,33 @@ import Model.data.Ingredient;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/**
+ * This class represents data structure of ingredients hierarchy
+ * @see Ingredient
+ * @autor Elena Samsonova
+ */
+
 public class Salad {
 
+    /**
+     * Container for salad ingredients:
+     * @see Model.data.Vegetable
+     * @see Model.data.Spice
+     */
     private ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
 
+    /**
+     *Appends element to the end of ingredientList.
+     * @param ingredient is the element to be added
+     */
     public void add(Ingredient ingredient) {
         ingredientList.add(ingredient);
     }
 
+    /**
+     *Counts total amount of calories in salad
+     * @return total amount of calories in salad
+     */
     public float countCalories() {
         float sumOfCalories = 0;
         for (Ingredient ingredient : ingredientList) {
@@ -21,6 +40,10 @@ public class Salad {
         return sumOfCalories;
     }
 
+    /**
+     *Sorts ingredients in ingredientList by field name
+     * lexicographically
+     */
     public void sortByName() {
         ingredientList.sort(new Comparator<Ingredient>() {
             @Override
@@ -30,6 +53,10 @@ public class Salad {
         });
     }
 
+    /**
+     *Sorts ingredients in ingredientList by field weight
+     * from smaller to larger
+     */
     public void sortByWeight() {
         ingredientList.sort(new Comparator<Ingredient>() {
             @Override
@@ -44,6 +71,10 @@ public class Salad {
         });
     }
 
+    /**
+     *Sorts ingredients in ingredientList by field calories
+     * from smaller to larger
+     */
     public void sortByCalories() {
         ingredientList.sort(new Comparator<Ingredient>() {
             @Override
@@ -58,6 +89,12 @@ public class Salad {
         });
     }
 
+    /**
+     *Returns list of ingredients which fit in a given calorie range
+     *@param from determine the lower boundary
+     *@param to determine the upper boundary
+     *@return list of selected ingredients
+     */
     public ArrayList<Ingredient> findIngridientInRangeOfCalories(float from, float to) {
         ArrayList<Ingredient> ingredientRangeList = new ArrayList<>();
         for (Ingredient ingredient : ingredientList) {
@@ -67,6 +104,9 @@ public class Salad {
         return ingredientRangeList;
     }
 
+    /**
+     *@return copy of the private list of ingredients
+     */
     public ArrayList<Ingredient> getIngredientList() {
         ArrayList<Ingredient> ingredientsCopy = new ArrayList<Ingredient>();
         ingredientsCopy.addAll(this.ingredientList);
