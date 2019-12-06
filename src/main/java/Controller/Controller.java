@@ -36,10 +36,10 @@ public class Controller {
     }
 
     public void showIngredients(ArrayList<Ingredient> list) {
-       list.forEach(ingredient ->
-                        view.showMessage(ingredient.getName() + " "
-                                + ingredient.getCalories() + " "
-                                + ingredient.getWeight()));
+        list.forEach(ingredient ->
+                view.showMessage(ingredient.getName() + " "
+                        + ingredient.getCalories() + " "
+                        + ingredient.getWeight()));
         view.showMessage(View.DELIMETER);
     }
 
@@ -56,7 +56,7 @@ public class Controller {
         model.sortByWeight();
         view.showMessage(View.SORTED_BY_WEIGHT);
         showIngredients(model.getIngredientList());
-        showIngredients(model.getIngredientsInRangeOfCalories(12,25));
+        showIngredients(model.getIngredientsInRangeOfCalories(12, 25));
 
 
     }

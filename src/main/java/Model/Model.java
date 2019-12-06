@@ -9,37 +9,36 @@ public class Model {
     private Salad salad = new Salad();
 
 
-    public void addIngredient(VegetableEnum vegetableEnum, float weight){
-        salad.add(new Vegetable(vegetableEnum,weight));
+    public void addIngredient(VegetableEnum vegetableEnum, float weight) {
+        salad.add(new Vegetable(vegetableEnum, weight));
     }
 
-    public void addIngredient(SpiceEnum spiceEnum, float weight){
-        salad.add(new Spice(spiceEnum,weight));
+    public void addIngredient(SpiceEnum spiceEnum, float weight) {
+        salad.add(new Spice(spiceEnum, weight));
     }
 
-    public ArrayList <Ingredient> getIngredientsInRangeOfCalories(float from, float to){
-        return salad.findIngridientInRangeOfCalories(from,to);
+    public ArrayList<Ingredient> getIngredientsInRangeOfCalories(float from, float to) {
+        return salad.findIngredientInRangeOfCalories(from, to);
     }
 
 
-
-    public float countSaladCalories(){
-         return salad.countCalories();
+    public float countSaladCalories() {
+        return salad.countCalories();
     }
 
-    public ArrayList<Ingredient> getIngredientList(){
+    public ArrayList<Ingredient> getIngredientList() {
         return salad.getIngredientList();
     }
 
-    public void sortByName(){
+    public void sortByName() {
         salad.sortByName();
     }
 
-    public void sortByCalories(){
+    public void sortByCalories() {
         salad.sortByCalories();
     }
 
-    public void sortByWeight(){
+    public void sortByWeight() {
         salad.sortByWeight();
     }
 }

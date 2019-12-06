@@ -8,7 +8,7 @@ public class View {
     public static final String SORTED_BY_NAME = "Ingredients sorted by name: ";
     public static final String SORTED_BY_WEIGHT = "Ingredients sorted by weight: ";
 
-    public void showMessage(String message){
+    public void showMessage(String message) {
         System.out.println(message);
     }
 
